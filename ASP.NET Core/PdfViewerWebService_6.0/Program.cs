@@ -13,13 +13,9 @@ builder.Services.AddCors(options =>
     options.AddPolicy(name: MyAllowSpecificOrigins,
                         builder =>
                         {
-                            builder.WithOrigins(
-                                "https://polite-ocean-0b1256410.1.azurestaticapps.net/",
-                                "http://localhost:3000",
-                                "https://localhost:3000"
-                            )
-                            .AllowAnyMethod()
-                            .AllowAnyHeader();
+                            builder.AllowAnyOrigin()
+                              .AllowAnyMethod()
+                              .AllowAnyHeader();
                         });
 });
 

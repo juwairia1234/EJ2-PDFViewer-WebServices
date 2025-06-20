@@ -11,7 +11,8 @@ builder.Services.AddControllers().AddNewtonsoftJson(options =>
 builder.Services.AddCors(options =>
 {
     options.AddPolicy(name: MyAllowSpecificOrigins,
-                        builder => {
+                        builder =>
+                        {
                             builder.AllowAnyOrigin()
                               .AllowAnyMethod()
                               .AllowAnyHeader();
@@ -33,7 +34,7 @@ builder.Services.AddResponseCompression();
 var app = builder.Build();
 
 //Register Syncfusion license
-string licenseKey = string.Empty;
+string licenseKey = "ORg4AjUWIQA/Gnt2XFhhQlJHfVhdXnxLflFzVWJYdV52flFPcC0sT3RfQFhjT3xTd0FhWn9eeXJQRWteWA==";
 Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense(licenseKey);
 
 app.UseHttpsRedirection();
